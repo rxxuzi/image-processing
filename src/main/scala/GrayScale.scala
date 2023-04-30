@@ -7,7 +7,7 @@ object GrayScale {
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Soda.png")
       val outFile = "./rsc/Soda_gray.png"
-      //make grayscale save as outFile use for loop
+
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height = img.getHeight()
@@ -19,7 +19,7 @@ object GrayScale {
             val r = (rgb >> 16) & 0xff //赤の要素を抜き出す
             val g = (rgb >> 8) & 0xff  //緑の要素を抜き出す
             val b = rgb & 0xff         //青の要素を抜き出す
-            val gray = (r + g + b) / 3
+            val gray = (r + g + b) / 3 //三色の平均値
             val grayRgb = (gray << 16) | (gray << 8) | gray
             out.setRGB(x, y, grayRgb)
          }
