@@ -10,7 +10,7 @@ object LowQuality {
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Mostima.png")
       val outFile = "./rsc/Mostima_LowQuality.png"
-      val d = 4
+      val d = 10
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height: Int = img.getHeight()
@@ -23,26 +23,24 @@ object LowQuality {
       var keyY = 0
 
       for (y <- 0 until height) {
+         if (y % d == 0) keyY = y
          for (x <- 0 until width) {
+            if(x % d == 0) keyX = x
+
             val rgb = img.getRGB(x, y)
             val r = (rgb >> 16) & 0xff
             val g = (rgb >> 8) & 0xff
             val b = rgb & 0xff
 
 
-
             ca(x)(y)(0) = r
             ca(x)(y)(1) = g
             ca(x)(y)(2) = b
 
-            if(y % d != 0 && x % d != 0){
-               ca(x)(y)(0) = ca(x-1)(y-1)(0)
-               ca(x)(y)(1) =  ca(x-1)(y-1)(1)
-               ca(x)(y)(2) =  ca(x-1)(y-1)(2)
-            }else{
-               keyX = x
-               keyY = y
-               println(keyX + " " + keyY)
+            if(y % d != 0 || x % d != 0){
+               ca(x)(y)(0) = ca(keyX)(keyY)(0)
+               ca(x)(y)(1) = ca(keyX)(keyY)(1)
+               ca(x)(y)(2) = ca(keyX)(keyY)(2)
             }
 
 
