@@ -4,16 +4,12 @@ import java.io.File
 import javax.imageio.ImageIO
 
 /*
- * Created by IntelliJ IDEA.
- * 画像の二値化
- * 閾値を取り、グレースケール化したときの色の平均値が
- * 閾値以上なら白、以下なら黒をセットする。
+ * 画像の新規作成
  */
-object Binarization {
-   private val threshold = 100
+object Copy {
    def main(args: Array[String]): Unit = {
-      val file = new File("./rsc/Mostima.png")
-      val outFile = "./rsc/Mostima_Binary.png"
+      val file = new File("./rsc/Mostima.png")//読み込むファイル
+      val outFile = "./rsc/Mostima_Copy.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
@@ -26,16 +22,12 @@ object Binarization {
       for (y <- 0 until height) {
          for (x <- 0 until width) {
             val rgb = img.getRGB(x, y)
-            val r = (rgb >> 16) & 0xff //R
-            val g = (rgb >> 8) & 0xff //G
-            val b = rgb & 0xff //B
-
-            val gray = (r + g + b) / 3 //平均値を取る
-
-            val cb = if (gray <= threshold) 0  else 255
+            ca(x)(y)(0) = (rgb >> 16) & 0xff //R
+            ca(x)(y)(1) = (rgb >> 8) & 0xff //G
+            ca(x)(y)(2) = rgb & 0xff //B
 
             //色情報を座標ごとにセット
-            out.setRGB(x, y, new Color(cb,cb,cb).getRGB)
+            out.setRGB(x, y, new Color(ca(x)(y)(0), ca(x)(y)(1), ca(x)(y)(2)).getRGB)
 
          }
       }

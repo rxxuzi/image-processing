@@ -8,13 +8,15 @@ import javax.imageio.ImageIO
  * 低解像度化
  */
 object Pixel {
+   //間隔
+   val d = 3
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Mostima.png")
-      val outFile = "./rsc/Mostima_LowQuality.png"
-      val d = 5
+      val outFile = "./rsc/Mostima_Pixel.png"
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height: Int = img.getHeight()
+      println(width + "," + height)
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
       //横px 縦px 色情報
@@ -33,7 +35,6 @@ object Pixel {
             if(x % d == 0 && y % d == 0){
                keyX = x
                keyY = y
-               println(x + " " + y)
             }
 
             ca(x)(y)(0) = r

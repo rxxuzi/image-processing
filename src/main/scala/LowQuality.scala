@@ -7,13 +7,15 @@ import javax.imageio.ImageIO
  * 低解像度化
  */
 object LowQuality {
+   //間隔
+   val d = 10
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Mostima.png")
       val outFile = "./rsc/Mostima_LowQuality.png"
-      val d = 10
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height: Int = img.getHeight()
+      println(width + "," + height)
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
       //横px 縦px 色情報
