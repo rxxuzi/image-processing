@@ -9,7 +9,7 @@ import javax.imageio.ImageIO
  */
 object ToSmall {
    //縮小率
-   private val dx : Int = 2
+   private val dx : Int = 1
    private val dy: Int = 2
 
    def main(args: Array[String]): Unit = {
@@ -26,6 +26,7 @@ object ToSmall {
       val newHeight = height / dy
 
       val newImg = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB)//書き込み用
+
       //横px 縦px 色情報
       val ca = Array.ofDim[Int](width, height ,3)
 
@@ -38,15 +39,11 @@ object ToSmall {
          }
       }
 
-      for (y <- 0 until newWidth) {
-         for (x <- 0 until newHeight) {
+      for (y <- 0 until newHeight) {
+         for (x <- 0 until newWidth) {
             val px = x / dx
             val py = y / dy
-            try{
-               newImg.setRGB(x,y,new Color(ca(px)(py)(0),ca(px)(py)(1),ca(px)(py)(2)).getRGB)
-            }catch {
-               case e: Exception => println(e)
-            }
+            newImg.setRGB( x, y, new Color(ca(px)(py)(0),ca(px)(py)(1),ca(px)(py)(2)).getRGB)
          }
       }
 

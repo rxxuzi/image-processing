@@ -4,7 +4,7 @@ import java.io.File
 import javax.imageio.ImageIO
 
 /*
- * 画像の反転化
+ * 画像の反転
  */
 object Negative {
    def main(args: Array[String]): Unit = {
