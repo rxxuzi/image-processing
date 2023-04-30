@@ -1,0 +1,143 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\Dot_c\AppData\Local\Temp\idea.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\Dot_c\AppData\Local\Temp\idea.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.8.2 (Amazon.com Inc. Java 1.8.0_362)
+[debug]       Load.loadUnit: plugins took 132.5463ms
+[debug]       Load.loadUnit: defsScala took 0.7758ms
+[debug] [Loading] Scanning directory C:\Users\Dot_c\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Dot_c\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 27.3997 ms
+[debug]           Load.resolveProject(global-plugins) took 73.1148ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\Dot_c\.sbt\1.0\plugins, plugins: List(<none>))) took 133.7726ms
+[debug] [Loading] Done in C:\Users\Dot_c\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 164.1468ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.7311ms
+[debug]     Load.loadUnit(file:/C:/Users/Dot_c/.sbt/1.0/plugins/, ...) took 315.0301ms
+[debug]   Load.apply: load took 648.4601ms
+[debug]   Load.apply: resolveProjects took 7.847ms
+[debug]   Load.apply: finalTransforms took 229.8502ms
+[debug]   Load.apply: config.delegates took 9.2087ms
+[debug]   Load.apply: Def.make(settings)... took 671.0718ms
+[debug]   Load.apply: structureIndex took 132.9813ms
+[debug]   Load.apply: mkStreams took 2.3651ms
+[info] loading global plugins from C:\Users\Dot_c\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 4337.5082ms
+[debug]           Load.loadUnit: plugins took 30.932ms
+[debug]           Load.loadUnit: defsScala took 0.0053ms
+[debug] [Loading] Scanning directory C:\Users\Dot_c\IdeaProjects\image processing\project
+[debug]             Load.loadUnit: mkEval took 13.972ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\Dot_c\IdeaProjects\image processing\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 3.8873 ms
+[info] loading settings for project image-processing-build from idea.sbt ...
+[debug]               Load.resolveProject(image-processing-build) took 4.1316ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id image-processing-build, base: C:\Users\Dot_c\IdeaProjects\image processing\project, plugins: List(<none>))) took 8.7241ms
+[debug] [Loading] Done in C:\Users\Dot_c\IdeaProjects\image processing\project, returning: (image-processing-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2947.2326ms
+[debug]           Load.loadUnit: cleanEvalClasses took 11.9691ms
+[debug]         Load.loadUnit(file:/C:/Users/Dot_c/IdeaProjects/image%20processing/project/, ...) took 2991.9415ms
+[debug]       Load.apply: load took 2993.8139ms
+[debug]       Load.apply: resolveProjects took 0.1049ms
+[debug]       Load.apply: finalTransforms took 14.7576ms
+[debug]       Load.apply: config.delegates took 0.5025ms
+[debug]       Load.apply: Def.make(settings)... took 139.6564ms
+[debug]       Load.apply: structureIndex took 38.1888ms
+[debug]       Load.apply: mkStreams took 0.003ms
+[info] loading project definition from C:\Users\Dot_c\IdeaProjects\image processing\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[warn] Unrecognized repository Scala Plugin Bundled Repository, ignoring it
+[debug]     Load.loadUnit: plugins took 8282.0162ms
+[debug]     Load.loadUnit: defsScala took 0.0084ms
+[debug] [Loading] Scanning directory C:\Users\Dot_c\IdeaProjects\image processing
+[debug]       Load.loadUnit: mkEval took 0.5714ms
+[debug] [Loading] Found root project root w/ remaining 
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin)))
+[debug] Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 3.6251 ms
+[info] loading settings for project root from build.sbt ...
+[debug]         Load.resolveProject(root) took 43.2499ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\Dot_c\IdeaProjects\image processing, plugins: List(<none>))) took 49.3426ms
+[debug] [Loading] Done in C:\Users\Dot_c\IdeaProjects\image processing, returning: (root)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1649.7748ms
+[debug]     Load.loadUnit: cleanEvalClasses took 7.3623ms
+[debug]   Load.loadUnit(file:/C:/Users/Dot_c/IdeaProjects/image%20processing/, ...) took 9942.9329ms
+[debug] Load.apply: load took 9945.4679ms
+[debug] Load.apply: resolveProjects took 0.1452ms
+[debug] Load.apply: finalTransforms took 35.7985ms
+[debug] Load.apply: config.delegates took 0.3817ms
+[debug] Load.apply: Def.make(settings)... took 98.6803ms
+[debug] Load.apply: structureIndex took 65.296ms
+[debug] Load.apply: mkStreams took 0.004ms
+[info] set current project to image processing (in build file:/C:/Users/Dot_c/IdeaProjects/image%20processing/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 60747 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 60747, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to image processing (in build file:/C:/Users/Dot_c/IdeaProjects/image%20processing/)
+[debug] > Exec(idea-shell, None, None)
