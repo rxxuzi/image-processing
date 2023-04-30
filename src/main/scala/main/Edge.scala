@@ -1,7 +1,8 @@
+package main
+
 import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
-import java.lang.ArrayIndexOutOfBoundsException
 import javax.imageio.ImageIO
 
 /*
@@ -13,8 +14,8 @@ import javax.imageio.ImageIO
 object Edge {
    private val threshold = 37
    def main(args: Array[String]): Unit = {
-      val file = new File("./rsc/Mostima.png")
-      val outFile = "./rsc/Mostima_Edge.png"
+      val file = new File("./rsc/Original.png")
+      val outFile = "./rsc/ "+ file.getName.split('.')(0) + " .png"
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得

@@ -1,3 +1,5 @@
+package main
+
 import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
@@ -12,8 +14,8 @@ object Noise {
    private [this] val NoiseRate = 60
    def main(args: Array[String]): Unit = {
       println("Noise Rate " + NoiseRate)
-      val file = new File("./rsc/Mostima.png")//読み込むファイル
-      val outFile = "./rsc/Mostima_Noise.png" //出力用パス
+      val file = new File("./rsc/Original.png")//読み込むファイル
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Noise.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得

@@ -1,12 +1,12 @@
-import java.io.File
-import java.awt.Graphics2D
-import java.awt.Color
-import javax.imageio.ImageIO
+package main
+
 import java.awt.image.BufferedImage
+import java.io.File
+import javax.imageio.ImageIO
 object GrayScale {
    def main(args: Array[String]): Unit = {
-      val file = new File("./rsc/Mostima.png")
-      val outFile = "./rsc/Mostima_gray.png"
+      val file = new File("./rsc/Original.png")
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_gray.png"
 
       val img = ImageIO.read(file)
       val width = img.getWidth()

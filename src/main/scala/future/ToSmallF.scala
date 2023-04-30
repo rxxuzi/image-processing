@@ -17,8 +17,8 @@ object ToSmallF {
    private val dy : Int = 2
 
    def main(args: Array[String]): Unit = {
-      val file = new File("./rsc/Mostima.png")//読み込むファイル
-      val outFile = "./rsc/Mostima_Small_Future.png" //出力用パス
+      val file = new File("./rsc/Original.png")//読み込むファイル
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Small_Future.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
