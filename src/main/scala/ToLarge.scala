@@ -2,29 +2,30 @@ import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
-
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 /*
- * 画像を小さくする
+ * 画像を大きく
  *
  */
-object ToSmall {
-   //縮小率
-   private val dx : Int = 1
-   private val dy : Int = 2
+object ToLarge {
+   //拡大率
+   private val dx : Int = 5
+   private val dy : Int = 5
 
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Mostima.png")//読み込むファイル
-      val outFile = "./rsc/Mostima_Small.png" //出力用パス
+      val outFile = "./rsc/Mostima_Large.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "," + height)
-      val startTime = System.currentTimeMillis() //タイマースタート
 
       //小さくしたときのサイズ
-      val newWidth = width / dx
-      val newHeight = height / dy
+      val newWidth = width * dx
+      val newHeight = height *  dy
 
+      val startTime = System.currentTimeMillis() //タイマースタート
       val newImg = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB)//書き込み用
 
       //横px 縦px 色情報
@@ -41,11 +42,12 @@ object ToSmall {
 
       for (y <- 0 until newHeight) {
          for (x <- 0 until newWidth) {
-            val px = x * dx
-            val py = y * dy
+            val px = x / dx
+            val py = y / dy
             newImg.setRGB( x, y, new Color(ca(px)(py)(0), ca(px)(py)(1), ca(px)(py)(2)).getRGB)
          }
       }
+
 
       //書き込み
       ImageIO.write(newImg, "png", new File(outFile))

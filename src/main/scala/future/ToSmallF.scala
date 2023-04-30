@@ -1,20 +1,24 @@
+package future
+
 import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.Future
 
 /*
  * 画像を小さくする
  *
  */
-object ToSmall {
+object ToSmallF {
    //縮小率
    private val dx : Int = 1
    private val dy : Int = 2
 
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Mostima.png")//読み込むファイル
-      val outFile = "./rsc/Mostima_Small.png" //出力用パス
+      val outFile = "./rsc/Mostima_Small_Future.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
@@ -39,11 +43,21 @@ object ToSmall {
          }
       }
 
+      val future :Future[Unit] = Future {
+         println("Start")
+      }
       for (y <- 0 until newHeight) {
-         for (x <- 0 until newWidth) {
-            val px = x * dx
-            val py = y * dy
-            newImg.setRGB( x, y, new Color(ca(px)(py)(0), ca(px)(py)(1), ca(px)(py)(2)).getRGB)
+         future.map( _ =>
+            for (x <- 0 until newWidth) {
+
+               val px = x * dx
+               val py = y * dy
+               newImg.setRGB( x, y, new Color(ca(px)(py)(0), ca(px)(py)(1), ca(px)(py)(2)).getRGB)
+            }
+         )
+         Thread.sleep(1)
+         if(! future.isCompleted) {
+            println("Waiting")
          }
       }
 
