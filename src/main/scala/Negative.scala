@@ -2,38 +2,42 @@ import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
-import scala.math.random
 
 /*
- * 画像にノイズを加える
+ * 画像の反転化
  */
-object Noise {
-   //ノイズ率
-   private [this] val NoiseRate = 60
+object Negative {
    def main(args: Array[String]): Unit = {
-      println("Noise Rate " + NoiseRate)
       val file = new File("./rsc/Mostima.png")//読み込むファイル
-      val outFile = "./rsc/Mostima_Noise.png" //出力用パス
+      val outFile = "./rsc/Mostima_Negative.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
-      println(width + "px * " + height + "px")
+      println(width + "," + height)
       val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
+      //横px 縦px 色情報
+      val ca = Array.ofDim[Int](width, height ,3)
+      val z = 255
       for (y <- 0 until height) {
          for (x <- 0 until width) {
-            val rate = random() * 100
-            if (rate < NoiseRate) {
-               img.setRGB(x, y, new Color(0,0,0).getRGB)
-            }
+            val rgb = img.getRGB(x, y)
+            ca(x)(y)(0) = (rgb >> 16) & 0xff //R
+            ca(x)(y)(1) = (rgb >> 8) & 0xff //G
+            ca(x)(y)(2) = rgb & 0xff //B
+
+            //色情報を座標ごとにセット
+            out.setRGB(x, y, new Color(z-ca(x)(y)(0),z- ca(x)(y)(1),z- ca(x)(y)(2)).getRGB)
+
          }
       }
 
       //書き込み
-      ImageIO.write(img, "png", new File(outFile))
+      ImageIO.write(out, "png", new File(outFile))
       val endTime = System.currentTimeMillis()
       println("Done")
       println("Time : " + (endTime - startTime) + "ms")
+
    }
 
 
