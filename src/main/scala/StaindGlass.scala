@@ -9,18 +9,17 @@ import javax.imageio.ImageIO
 object StaindGlass {
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Mostima.png")//読み込むファイル
-      val outFile = "./rsc/Mostima_Copy.png" //出力用パス
+      val outFile = "./rsc/Mostima_Staind.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "px * " + height + "px")
-      val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
-      //横px 縦px 色情報
-      val ca = Array.ofDim[Int](width, height ,3)
+      val startTime = System.currentTimeMillis()
 
       //コア数
-      val coreNum = 5000
+      val coreNum = 1000
+      println("Number of Core : "+coreNum )
       //コアを乱数で決める
       //core Array
       val core = new Array[Core](coreNum)
@@ -31,11 +30,26 @@ object StaindGlass {
          core(i).color = new Color(img.getRGB(core(i).x , core(i).y))
       }
 
-
+      for(x  <- 0 until width){
+         for(y <- 0 until height){
+            var newC :Color = null
+            var mini  = 100000d
+            for(i <- 0 until coreNum){
+               val length = math.sqrt(math.pow(core(i).x - x, 2) + math.pow(core(i).y - y, 2))
+               if(length < mini){
+                  mini = length
+                  newC = core(i).color
+               }
+            }
+            img.setRGB(x,y,newC.getRGB)
+         }
+      }
 
       //書き込み
       ImageIO.write(img, "png", new File(outFile))
+      val endTime = System.currentTimeMillis()
       println("Done")
+      println("Time : "+(endTime - startTime) + "ms")
    }
 
    private case class Core(){

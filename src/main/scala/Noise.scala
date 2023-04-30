@@ -18,8 +18,8 @@ object Noise {
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "px * " + height + "px")
+      val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-
       for (y <- 0 until height) {
          for (x <- 0 until width) {
             val rate = random() * 100
@@ -31,7 +31,9 @@ object Noise {
 
       //書き込み
       ImageIO.write(img, "png", new File(outFile))
+      val endTime = System.currentTimeMillis()
       println("Done")
+      println("Time : " + (endTime - startTime) + "ms")
    }
 
 

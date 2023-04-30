@@ -18,8 +18,8 @@ object Binarization {
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "," + height)
+      val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-
       //横px 縦px 色情報
       val ca = Array.ofDim[Int](width, height ,3)
 
@@ -42,7 +42,9 @@ object Binarization {
 
       //書き込み
       ImageIO.write(out, "png", new File(outFile))
+      val endTime = System.currentTimeMillis()
       println("Done")
+      println("Time : " + (endTime - startTime) + "ms")
    }
 
 

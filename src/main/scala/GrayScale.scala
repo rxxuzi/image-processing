@@ -12,8 +12,8 @@ object GrayScale {
       val width = img.getWidth()
       val height = img.getHeight()
       println(width + "," + height)
+      val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-
       for (x <- 0 until width) {
          for (y <- 0 until height) {
             val rgb = img.getRGB(x, y)
@@ -26,7 +26,9 @@ object GrayScale {
          }
       }
       ImageIO.write(out, "png", new File(outFile))
+      val endTime = System.currentTimeMillis()
       println("Done")
+      println("Time : " + (endTime - startTime) + "ms")
 
    }
 }

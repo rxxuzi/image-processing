@@ -17,8 +17,9 @@ object Pixel {
       val width = img.getWidth()
       val height: Int = img.getHeight()
       println(width + "px * " + height + "px")
-      val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
+      val startTime = System.currentTimeMillis()
 
+      val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
       //横px 縦px 色情報
       val ca = Array.ofDim[Int](width, height ,3)
 
@@ -66,7 +67,9 @@ object Pixel {
 
 
       ImageIO.write(out, "png", new File(outFile))
+      val endTime = System.currentTimeMillis()
       println("Done")
+      println("Time : " + (endTime - startTime) + "ms")
    }
 
 
