@@ -6,7 +6,7 @@ import javax.imageio.ImageIO
 object GrayScale {
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")
-      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_gray.png"
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Gray.png"
 
       val img = ImageIO.read(file)
       val width = img.getWidth()

@@ -9,7 +9,8 @@ import javax.imageio.ImageIO
  */
 object StaindGlass {
    //コア数
-   private val coreNum = 50000
+   private val coreNum = 1000
+
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")//読み込むファイル
       val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Staind_Core-"+coreNum+".png" //出力用パス
@@ -57,5 +58,6 @@ object StaindGlass {
       var x ,y = 0
       var color :Color =  null
    }
+
 }
 
