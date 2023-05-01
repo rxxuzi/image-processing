@@ -10,10 +10,11 @@ import javax.imageio.ImageIO
  */
 object LowQuality {
    //間隔
-   val d = 100
+   val d = 3
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")
       val outFile = "./rsc/"+ file.getName.split('.')(0) + "_LowQuality_D-" + d + ".png"
+
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height: Int = img.getHeight()
@@ -32,14 +33,10 @@ object LowQuality {
             if(x % d == 0) keyX = x
 
             val rgb = img.getRGB(x, y)
-            val r = (rgb >> 16) & 0xff
-            val g = (rgb >> 8) & 0xff
-            val b = rgb & 0xff
 
-
-            ca(x)(y)(0) = r
-            ca(x)(y)(1) = g
-            ca(x)(y)(2) = b
+            ca(x)(y)(0) = (rgb >> 16) & 0xff
+            ca(x)(y)(1) = (rgb >> 8) & 0xff
+            ca(x)(y)(2) = rgb & 0xff
 
             if(y % d != 0 || x % d != 0){
                ca(x)(y)(0) = ca(keyX)(keyY)(0)

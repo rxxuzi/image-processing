@@ -5,11 +5,11 @@ import java.io.File
 import javax.imageio.ImageIO
 
 /*
- * 画像の新規作成
+ * ステンドグラス風画像
  */
 object StaindGlass {
    //コア数
-   private val coreNum = 1000
+   private val coreNum = 100
 
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")//読み込むファイル

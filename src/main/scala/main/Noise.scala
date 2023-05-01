@@ -11,7 +11,8 @@ import scala.math.random
  */
 object Noise {
    //ノイズ率
-   private [this] val NoiseRate = 60
+   private [this] val NoiseRate = 30
+
    def main(args: Array[String]): Unit = {
       println("Noise Rate " + NoiseRate)
       val file = new File("./rsc/Original.png")//読み込むファイル
