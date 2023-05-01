@@ -22,10 +22,15 @@ object Hough {
          for (y <- 0 until height) {
             val pixel = img.getRGB(x, y)
             val z = pixel & 0xff //make it 8 bits
-            print(z + ",")
+            if(z == 255) {
+               list = list :+ 1
+            }else{
+               list = list :+ 0
+            }
          }
-         println()
       }
+
+
    }
 
 }

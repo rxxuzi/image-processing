@@ -15,7 +15,7 @@ object Binarization {
    private val threshold = 100
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")
-      val outFile = "./rsc/" + file.getName.split('.')(0) + "_Binary.png"
+      val outFile = "./rsc/" + file.getName.split('.')(0) + "_Binary-"+threshold+".png"
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
