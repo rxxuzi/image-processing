@@ -12,6 +12,7 @@ object Hough {
       val img = ImageIO.read(file)
       val width = img.getWidth
       val height = img.getHeight
+      val diagonal =  Math.sqrt(width * width + height * height)
       val newImge = new BufferedImage(width,height, BufferedImage.TYPE_INT_RGB)
 
       //array list
