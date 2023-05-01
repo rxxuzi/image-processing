@@ -9,7 +9,7 @@ import javax.imageio.ImageIO
  */
 object StaindGlass {
    //コア数
-   private val coreNum = 100
+   private val coreNum = 250
 
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")//読み込むファイル

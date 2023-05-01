@@ -11,8 +11,8 @@ import javax.imageio.ImageIO
  */
 object ToSmall {
    //縮小率
-   private val dx : Int = 1
-   private val dy : Int = 2
+   private val dx : Int = 2
+   private val dy : Int = 3
 
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")//読み込むファイル
