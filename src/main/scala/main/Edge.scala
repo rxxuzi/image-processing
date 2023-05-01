@@ -11,6 +11,7 @@ import javax.imageio.ImageIO
  * 下の座標(x,y+1)の明るさの差を計算し、
  * その差が閾値より大きい時に(x,y)をエッジとして検出
  */
+
 object Edge {
    private val threshold = 37
    def main(args: Array[String]): Unit = {

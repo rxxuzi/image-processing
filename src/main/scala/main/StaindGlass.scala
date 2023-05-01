@@ -8,9 +8,11 @@ import javax.imageio.ImageIO
  * 画像の新規作成
  */
 object StaindGlass {
+   //コア数
+   private val coreNum = 50000
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")//読み込むファイル
-      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Staind.png" //出力用パス
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Staind_Core-"+coreNum+".png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
@@ -18,8 +20,6 @@ object StaindGlass {
 
       val startTime = System.currentTimeMillis()
 
-      //コア数
-      val coreNum = 1000
       println("Number of Core : "+coreNum )
       //コアを乱数で決める
       //core Array
@@ -55,7 +55,7 @@ object StaindGlass {
 
    private case class Core(){
       var x ,y = 0
-      var color :Color =  null
+      var color :Option[Color] =  None
    }
 }
 

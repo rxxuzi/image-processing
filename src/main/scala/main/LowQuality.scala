@@ -10,10 +10,10 @@ import javax.imageio.ImageIO
  */
 object LowQuality {
    //間隔
-   val d = 10
+   val d = 100
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")
-      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_LowQuality.png"
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_LowQuality_D-" + d + ".png"
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height: Int = img.getHeight()
