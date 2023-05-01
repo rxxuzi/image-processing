@@ -18,17 +18,22 @@ object Circle {
       println(width + "px * " + height + "px")
       val startTime = System.currentTimeMillis()
 
-      val centerX = width/2
-      val centerY = height/2
-      val radius = width/2
-      val dr = 10
+      val center = (width/2, height/2)
+      val dr = 2
+      val diagonal = Math.sqrt( width*width + height*height )
       for (y <- 0 until height) {
          for (x <- 0 until width) {
-            if(Math.pow(centerX - x, 2) + Math.pow(centerY - y, 2) <= Math.pow(radius, 2)) {
-               img.setRGB(x, y, new Color(0,0,0).getRGB)
+            for(r <- 0 until diagonal.toInt /2 by dr*2){
+               //波紋を生成
+               if(Math.sqrt( (x-center._1)*(x-center._1) + (y-center._2)*(y-center._2) ) < r && Math.sqrt( (x-center._1)*(x-center._1) + (y-center._2)*(y-center._2) ) >= r-dr){
+                  img.setRGB(x, y, Color.BLACK.getRGB)
+               }
             }
          }
       }
+
+      val circleCount = diagonal.toInt / dr / 2
+      println("Number of circles : " + circleCount)
 
       //書き込み
       ImageIO.write(img, "png", new File(outFile))
