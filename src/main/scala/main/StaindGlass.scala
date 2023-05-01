@@ -55,7 +55,7 @@ object StaindGlass {
 
    private case class Core(){
       var x ,y = 0
-      var color :Option[Color] =  None
+      var color :Color =  null
    }
 }
 
