@@ -1,7 +1,6 @@
 package main
 
 import java.awt.Color
-import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
 
@@ -23,7 +22,7 @@ object Circle {
       val diagonal = Math.sqrt( width*width + height*height )
       for (y <- 0 until height) {
          for (x <- 0 until width) {
-            for(r <- 0 until diagonal.toInt /2 by dr*2){
+            for(r <- 0 until diagonal.toInt /2 by dr*2 ){
                //波紋を生成
                if(Math.sqrt( (x-center._1)*(x-center._1) + (y-center._2)*(y-center._2) ) < r && Math.sqrt( (x-center._1)*(x-center._1) + (y-center._2)*(y-center._2) ) >= r-dr){
                   img.setRGB(x, y, Color.BLACK.getRGB)
