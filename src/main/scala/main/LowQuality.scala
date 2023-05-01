@@ -17,7 +17,7 @@ object LowQuality {
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height: Int = img.getHeight()
-      println(width + "," + height)
+      println(width + "px * " + height + "px")
       val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
       //横px 縦px 色情報

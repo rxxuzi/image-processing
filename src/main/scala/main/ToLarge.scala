@@ -19,7 +19,7 @@ object ToLarge {
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
-      println(width + "," + height)
+      println(width + "px * " + height + "px")
 
       //小さくしたときのサイズ
       val newWidth = width * dx

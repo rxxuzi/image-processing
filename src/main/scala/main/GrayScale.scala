@@ -11,7 +11,7 @@ object GrayScale {
       val img = ImageIO.read(file)
       val width = img.getWidth()
       val height = img.getHeight()
-      println(width + "," + height)
+      println(width + "px * " + height + "px")
       val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
       for (x <- 0 until width) {
