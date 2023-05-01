@@ -15,7 +15,7 @@ import javax.imageio.ImageIO
 object Edge {
    private val threshold = 37
    def main(args: Array[String]): Unit = {
-      val file = new File("./rsc/Original_Large.png")
+      val file = new File("./rsc/Original.png")
       val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Edge_gap-" +threshold+" .png"
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得

@@ -15,13 +15,12 @@ object Noise {
    def main(args: Array[String]): Unit = {
       println("Noise Rate " + NoiseRate)
       val file = new File("./rsc/Original.png")//読み込むファイル
-      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Noise" + NoiseRate + "_Rate.png" //出力用パス
+      val outFile = "./rsc/"+ file.getName.split('.')(0) + "_Noise_Rate-" + NoiseRate + "%.png" //出力用パス
       val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "px * " + height + "px")
       val startTime = System.currentTimeMillis()
-      val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
       for (y <- 0 until height) {
          for (x <- 0 until width) {
             val rate = random() * 100
