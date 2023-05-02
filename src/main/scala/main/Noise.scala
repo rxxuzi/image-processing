@@ -11,7 +11,7 @@ import scala.math.random
  */
 object Noise {
    //ノイズ率
-   private [this] val NoiseRate = 30
+   private [this] val NoiseRate = 10
 
    def main(args: Array[String]): Unit = {
       println("Noise Rate " + NoiseRate)

@@ -47,9 +47,6 @@ object Pixel {
                ca(x)(y)(0) = 0
                ca(x)(y)(1) = 0
                ca(x)(y)(2) = 0
-//               ca(x)(y)(0) = ca(keyX)(keyY)(0)
-//               ca(x)(y)(1) = ca(keyX)(keyY)(1)
-//               ca(x)(y)(2) = ca(keyX)(keyY)(2)
             }
 
 
