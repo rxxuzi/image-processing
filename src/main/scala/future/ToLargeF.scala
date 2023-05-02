@@ -42,6 +42,7 @@ object ToLargeF {
       val newImg = new BufferedImage(newWidth, newHeight, BufferedImage.TYPE_INT_RGB)//書き込み用
 
       //横px 縦px 色情報
+      
       val ca = Array.ofDim[Int](width, height ,3)
       f.map { _ =>
          for (y <- 0 until height ) {

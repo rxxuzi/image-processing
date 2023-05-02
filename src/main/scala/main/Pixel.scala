@@ -48,10 +48,7 @@ object Pixel {
                ca(x)(y)(1) = 0
                ca(x)(y)(2) = 0
             }
-
-
             out.setRGB(x, y, new Color(ca(x)(y)(0), ca(x)(y)(1), ca(x)(y)(2)).getRGB)
-
          }
       }
 
