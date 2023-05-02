@@ -6,8 +6,7 @@ import java.io.File
 import javax.imageio.ImageIO
 
 /*
- * Created by IntelliJ IDEA.
- * 低解像度化
+ *  点描画風にする
  */
 object Pixel {
    //間隔
