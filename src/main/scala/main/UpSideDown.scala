@@ -21,18 +21,14 @@ object UpSideDown {
       //横px 縦px 色情報
       val ca = Array.ofDim[Int](width, height ,3)
 
-      for (y <- 0 until height) {
-         for (x <- 0 until width) {
-            val rgb = img.getRGB(x, y)
-            ca(x)(y)(0) = (rgb >> 16) & 0xff //R
-            ca(x)(y)(1) = (rgb >> 8) & 0xff //G
-            ca(x)(y)(2) = rgb & 0xff //B
-
-            //色情報を座標ごとにセット
-
-         }
+      for (y <- 0 until height ; x <- 0 until width) {
+         val rgb = img.getRGB(x, y)
+         ca(x)(y)(0) = (rgb >> 16) & 0xff //R
+         ca(x)(y)(1) = (rgb >> 8) & 0xff //G
+         ca(x)(y)(2) = rgb & 0xff //B
       }
 
+      //色情報を座標ごとにセット
       for(x <- 0 until width; y <- 0 until height){
          newImg.setRGB(width - x - 1, height - y - 1, new Color(ca(x)(y)(0), ca(x)(y)(1), ca(x)(y)(2)).getRGB)
       }
