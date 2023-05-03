@@ -21,9 +21,7 @@ object Binarization {
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "," + height)
       val startTime = System.currentTimeMillis()
-      val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-      //横px 縦px 色情報
-      val ca = Array.ofDim[Int](width, height ,3)
+//      val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
 
       for (y <- 0 until height) {
          for (x <- 0 until width) {
@@ -37,13 +35,13 @@ object Binarization {
             val cb = if (gray <= threshold) 0  else 255
 
             //色情報を座標ごとにセット
-            out.setRGB(x, y, new Color(cb,cb,cb).getRGB)
+            img.setRGB(x, y, new Color(cb,cb,cb).getRGB)
 
          }
       }
 
       //書き込み
-      ImageIO.write(out, "png", new File(outFile))
+      ImageIO.write(img, "png", new File(outFile))
       val endTime = System.currentTimeMillis()
       println("Done")
       println("Time : " + (endTime - startTime) + "ms")

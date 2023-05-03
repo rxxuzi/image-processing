@@ -1,6 +1,6 @@
 package main
 
-import java.awt.Color
+import java.awt.{Color, Image}
 import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
@@ -32,7 +32,6 @@ object UpSideDown {
       for(x <- 0 until width; y <- 0 until height){
          newImg.setRGB(width - x - 1, height - y - 1, new Color(ca(x)(y)(0), ca(x)(y)(1), ca(x)(y)(2)).getRGB)
       }
-
 
       //書き込み
       ImageIO.write(newImg, "png", new File(outFile))
