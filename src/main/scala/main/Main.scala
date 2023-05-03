@@ -3,19 +3,27 @@ package main
 object Main {
    def main(args: Array[String]): Unit = {
       println("Hello World!")
-      //println date mm/dd/yyyy
+      //date mm/dd/yyyy
       println("Date -> "+new java.util.Date)
-      //println java version
+      //java version
       println("Jdk version ->"+  System.getProperty("java.version"))
-      //println java vendor
+      //java vendor
       println("Jdk vendor ->"+ System.getProperty("java.vendor"))
+
       println("Jdk home ->"+ System.getProperty("java.home"))
+      //java vendor url
       println("Jdk vendor url ->"+ System.getProperty("java.vendor.url"))
+      //java class path
       println("Jdk class path ->"+ System.getProperty("java.class.path"))
+      //user dir
       println("Jdk user dir ->"+ System.getProperty("user.dir"))
+      //user name
       println("Jdk user name ->"+ System.getProperty("user.name"))
+      //OS name
       println("Jdk os name ->"+ System.getProperty("os.name"))
+      //os version
       println("Jdk os version ->"+ System.getProperty("os.version"))
+      //os arch
       println("Jdk os arch ->"+ System.getProperty("os.arch"))
 
       //println scala version
