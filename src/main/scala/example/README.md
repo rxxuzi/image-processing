@@ -10,7 +10,10 @@
 
 [線形補間法](p1_Size_Click.scala)
 ![img.png](../../../../docs/png/img.png)
-$` z' = (1-q){(1-q)*z[i,j] + p*z[i+1,j]} +q{[1-p]*z[i,j+1] + p*z[i+1,j+1]} `$
+
+数式
+
+$$` z' = (1-q){(1-q)*z[i,j] + p*z[i+1,j]} +q{[1-p]*z[i,j+1] + p*z[i+1,j+1]} `$$
 
 ~~~scala
 val a = 10
