@@ -9,7 +9,7 @@ import javax.imageio.ImageIO
  * 諧調数変換
  */
 object p1_Level_Click {
-   private final val numLevel = 10 //諧調数
+   private final val numLevel = 100 //諧調数
 
    def main(args: Array[String]): Unit = {
 
@@ -31,6 +31,7 @@ object p1_Level_Click {
       for (y <- 0 until height) {
          for (x <- 0 until width) {
             val rgb = img.getRGB(x, y)
+
             var g  = ((rgb >> 16) & 0xff) / z1 //Gray
             g = g * z2 // z' = kz2
             val gray = if(g > 255)  255 else g.toInt
@@ -44,8 +45,5 @@ object p1_Level_Click {
       val endTime = System.currentTimeMillis()
       println("Done")
       println("Time : " + (endTime - startTime) + "ms")
-
    }
-
-
 }
