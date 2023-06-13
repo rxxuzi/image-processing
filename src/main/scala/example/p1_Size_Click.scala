@@ -1,18 +1,17 @@
 package example
 
-import java.awt.Color
 import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
 
 /*
- * 濃度反転
+ * 線形補間法
  */
-object p1_Inverse_Mono_Click {
+object p1_Size_Click {
    def main(args: Array[String]): Unit = {
       val file = new File("./rsc/Original.png")//読み込むファイル
-      val outFile = "./output/"+ file.getName.split('.')(0) + "_Inverse_MONO.png" //出力用パス
-      val img = ImageIO.read(file)//imageIOで画像を取得
+      val outFile = "./output/"+ file.getName.split('.')(0) + "_Gray.png" //出力用パス
+      val img = ImageIO.read(file)
       val width = img.getWidth() //画像の横pxを取得
       val height: Int = img.getHeight() //画像の縦pxを取得
       println(width + "px * " + height + "px")
@@ -28,12 +27,11 @@ object p1_Inverse_Mono_Click {
             ca(x)(y)(1) = (rgb >> 8) & 0xff //G
             ca(x)(y)(2) = rgb & 0xff //B
 
-            val gray = 255 - (ca(x)(y)(0) + ca(x)(y)(1) + ca(x)(y)(2)) / 3
+            val gray = (ca(x)(y)(0) + ca(x)(y)(1) + ca(x)(y)(2)) / 3
             val grayRgb = (gray << 16) | (gray << 8) | gray //グレースケールに変換
-
-
             //色情報を座標ごとにセット
             out.setRGB(x, y, grayRgb)
+
          }
       }
 
