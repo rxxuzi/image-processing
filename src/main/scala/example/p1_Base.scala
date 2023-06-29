@@ -32,7 +32,6 @@ object p1_Base {
             val grayRgb = (gray << 16) | (gray << 8) | gray //グレースケールに変換
             //色情報を座標ごとにセット
             out.setRGB(x, y, grayRgb)
-
          }
       }
 

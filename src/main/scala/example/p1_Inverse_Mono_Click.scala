@@ -10,7 +10,7 @@ import javax.imageio.ImageIO
  */
 object p1_Inverse_Mono_Click {
    def main(args: Array[String]): Unit = {
-      val file = new File("./rsc/Gray.png")//読み込むファイル
+      val file = new File("./rsc/Original.png")//読み込むファイル
       val outFile = "./output/"+ file.getName.split('.')(0) + "_Inverse_MONO.png" //出力用パス
       val img = ImageIO.read(file)//imageIOで画像を取得
       val width = img.getWidth() //画像の横pxを取得
@@ -27,11 +27,10 @@ object p1_Inverse_Mono_Click {
             ca(x)(y)(0) = (rgb >> 16) & 0xff //R
             ca(x)(y)(1) = (rgb >> 8) & 0xff //G
             ca(x)(y)(2) = rgb & 0xff //B
-
-            val gray = 255 - (ca(x)(y)(0) + ca(x)(y)(1) + ca(x)(y)(2)) / 3
-            val grayRgb = (gray << 16) | (gray << 8) | gray //グレースケールに変換
-
-
+            val newRed = 255 - ca(x)(y)(0) //255-R
+            val newGreen = 255 - ca(x)(y)(1) //255-G
+            val newBlue = 255 - ca(x)(y)(2) //255-B
+            val grayRgb = (newRed << 16) | (newGreen << 8) | newBlue //グレースケールに変換
             //色情報を座標ごとにセット
             out.setRGB(x, y, grayRgb)
          }

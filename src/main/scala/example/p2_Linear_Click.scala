@@ -18,10 +18,8 @@ object p2_Linear_Click {
       println(width + "px * " + height + "px")
       val startTime = System.currentTimeMillis()
       val out = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB)
-      //横px 縦px 色情報
-//      val gray = Array.ofDim[Int](width, height)
-      val a = 50
-      val b = 200
+      val a = 80
+      val b = 150
       for (y <- 0 until height) {
          for (x <- 0 until width) {
             val rgb = img.getRGB(x, y)

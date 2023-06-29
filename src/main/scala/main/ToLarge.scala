@@ -10,7 +10,7 @@ import javax.imageio.ImageIO
  */
 object ToLarge {
    //拡大率
-   private val dx : Int = 5
+   private val dx : Int = 4
    private val dy : Int = 5
 
    def main(args: Array[String]): Unit = {
@@ -39,7 +39,6 @@ object ToLarge {
             ca(x)(y)(2) = rgb & 0xff //B
          }
       }
-
       for (y <- 0 until newHeight) {
          for (x <- 0 until newWidth) {
             val px = x / dx
