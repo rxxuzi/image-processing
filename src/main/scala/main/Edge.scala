@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
 
-/*
+/**
  * エッジ検出
  * ピクセル座標(x,y)と右の座標(x+1,y)、
  * 下の座標(x,y+1)の明るさの差を計算し、
