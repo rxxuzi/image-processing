@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage
 import java.io.File
 import javax.imageio.ImageIO
 
-object Binary {
+object BasicBinary {
 
    private val className = this.getClass.getSimpleName.stripSuffix("$")
 
